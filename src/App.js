@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Profile from './Profile/Profile Component/Profile';
+import imageSrc from './Profile/Profile Component/ProfilePhoto.png';
 
-function App() {
+const App = () => {
+  const handleName = () => {
+    alert('Ismail Zouari');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Profile
+        fullName="Ismail Zouari"
+        bio="...."
+        profession="Web Developer"
+        handleName={handleName}
+      >
+        <img src={imageSrc} alt="profile" style={{ width: 200, height: 200, borderRadius: '50%' }} />
+      </Profile>
     </div>
   );
-}
+};
 
 export default App;
